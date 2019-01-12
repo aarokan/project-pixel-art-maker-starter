@@ -9,6 +9,11 @@ const submitButton = document.querySelector('form').lastElementChild;
 // Select the canvas table
 const canvasTable = document.querySelector('#pixelCanvas');
 
+// Define variables to store the selected color, height and width
+let colorValue;
+let heightValue;
+let widthValue;
+
 // Define listener function for the submitButton event listener
 function respondToSubmit (event) {
   event.preventDefault();
@@ -20,10 +25,10 @@ submitButton.addEventListener('click', respondToSubmit);
 
 function makeGrid() {
 
-// Define variables to store the selected color, height and width
-  let colorValue = colorInput.value;
-  let heightValue = heightInput.value;
-  let widthValue = widthInput.value;
+// Updating the values variables
+  colorValue = colorInput.value;
+  heightValue = heightInput.value;
+  widthValue = widthInput.value;
 
 // Create the canvas
   for (let r = 1; r <= heightValue; r++) {
