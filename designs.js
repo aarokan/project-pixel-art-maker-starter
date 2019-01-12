@@ -9,6 +9,15 @@ const submitButton = document.querySelector('form').lastElementChild;
 // Select the canvas table
 const canvasTable = document.querySelector('#pixelCanvas');
 
+// Define listener function for the submitButton event listener
+function respondToSubmit (event) {
+  event.preventDefault();
+  makeGrid();
+}
+
+// When size is submitted by the user, call makeGrid()
+submitButton.addEventListener('click', respondToSubmit);
+
 function makeGrid() {
 
 // Define variables to store the selected color, height and width
