@@ -25,4 +25,18 @@ function makeGrid() {
   let heightValue = heightInput.value;
   let widthValue = widthInput.value;
 
+// Create the canvas
+  for (let r = 1; r <= heightValue; r++) {
+    const newTr = document.createElement('tr');
+    canvasTable.appendChild(newTr);
+  }
+
+  let tableRows = document.querySelectorAll('tr');
+  for (let row = 0; row < heightValue; row++) {
+    for (let c = 1; c <= widthValue; c++) {
+      const newTd = document.createElement('td');
+      tableRows[row].appendChild(newTd);
+    }
+  }
+
 }
