@@ -23,6 +23,12 @@ function respondToSubmit (event) {
 // When size is submitted by the user, call makeGrid()
 submitButton.addEventListener('click', respondToSubmit);
 
+// Define listener function for the gridCells event listener
+function respondToClick (event) {
+  event.target.style.backgroundColor = colorValue;
+  console.log('clicked!')
+}
+
 function makeGrid() {
 
 // Updating the values variables
@@ -40,6 +46,7 @@ function makeGrid() {
   for (let row = 0; row < heightValue; row++) {
     for (let c = 1; c <= widthValue; c++) {
       const newTd = document.createElement('td');
+      newTd.addEventListener('click', respondToClick);
       tableRows[row].appendChild(newTd);
     }
   }
