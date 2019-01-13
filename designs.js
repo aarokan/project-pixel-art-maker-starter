@@ -36,6 +36,11 @@ function respondToClick (event) {
   event.target.style.backgroundColor = colorValue;
 }
 
+// Change the color value
+colorInput.addEventListener('input', function () {
+    colorValue = colorInput.value;
+});
+
 function makeGrid() {
 
 // Updating the values variables
