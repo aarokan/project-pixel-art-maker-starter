@@ -17,6 +17,14 @@ let widthValue;
 // Define listener function for the submitButton event listener
 function respondToSubmit (event) {
   event.preventDefault();
+
+  // Clear the grid
+  const tr = document.querySelectorAll('tr');
+  const trCount = canvasTable.childElementCount;
+  for (let c = 0; c < trCount; c++) {
+    tr[c].remove();
+  }
+
   makeGrid();
 }
 
@@ -26,7 +34,6 @@ submitButton.addEventListener('click', respondToSubmit);
 // Define listener function for the gridCells event listener
 function respondToClick (event) {
   event.target.style.backgroundColor = colorValue;
-  console.log('clicked!')
 }
 
 function makeGrid() {
